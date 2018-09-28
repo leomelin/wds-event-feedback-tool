@@ -1,0 +1,19 @@
+---
+
+questions:
+  - name: How did you like x?
+    type: STARS
+  - name: Could your company sponsor Wed Dev & Sausages?
+    type: YES_NO
+    ifYesQuestions:
+      - name: You answered yes to previous question, please name the company
+        type: OPEN
+      - name: Please give your email too so we can contact about sponsoring
+        type: OPEN
+  - name: Would you come to our event again?
+    type: YES_NO
+    ifNoQustions:
+      - name: Do you have a particular reason for not coming again?
+        type: OPEN
+  - name: Thank you for answering!
+    type: OK
