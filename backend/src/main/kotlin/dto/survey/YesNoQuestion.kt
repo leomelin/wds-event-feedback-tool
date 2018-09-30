@@ -1,4 +1,4 @@
-package dto
+package dto.survey
 
 data class YesNoQuestion(
     override val name: String,

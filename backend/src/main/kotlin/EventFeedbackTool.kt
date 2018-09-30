@@ -1,5 +1,5 @@
 
-import socket.EchoWebSocket
+import socket.SurveyWebSocket
 import spark.Spark.init
 import spark.Spark.webSocket
 import spark.kotlin.Http
@@ -12,7 +12,7 @@ fun main(args: Array<String>) {
     println("Server REST endpoints running on port $restPort")
     spark.kotlin.port(socketPort)
 
-    webSocket("/echo", EchoWebSocket::class.java)
+    webSocket("/socket", SurveyWebSocket::class.java)
     init()
     val http: Http = ignite()
     http.port(restPort)

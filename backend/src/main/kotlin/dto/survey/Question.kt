@@ -1,4 +1,4 @@
-package dto
+package dto.survey
 
 enum class QuestionType {
     STARS,
