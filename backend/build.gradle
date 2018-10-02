@@ -11,8 +11,9 @@ buildscript {
 
 group 'wds'
 version '1.0-SNAPSHOT'
-
+apply plugin: 'application'
 apply plugin: 'kotlin'
+mainClassName = "EventFeedbackToolKt"
 
 repositories {
     mavenCentral()
@@ -24,7 +25,8 @@ dependencies {
     compile group: 'com.sparkjava', name: 'spark-kotlin', version: '1.0.0-alpha'
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.5'
-
+    // https://mvnrepository.com/artifact/info.macias/kaconf
+    compile group: 'info.macias', name: 'kaconf', version: '0.8.6'
 }
 
 compileKotlin {

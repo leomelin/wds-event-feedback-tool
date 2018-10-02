@@ -23,18 +23,21 @@ class ActionHandler(private val session: Session) {
                 throw HandleActionException("Action type not found")
             }
         }
-
     }
 
-    private fun handleJoinSurvey(readValue: JoinSurveyRequest?) {
+    private fun handleJoinSurvey(req: JoinSurveyRequest) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    private fun handleLockSurvey(readValue: LockSurveyRequest?) {
+    private fun handleLockSurvey(req: LockSurveyRequest) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    private fun handleStartSurvey(readValue: StartSurveyRequest?) {
-        session.remote.sendString("Survey started!")
+    private fun handleStartSurvey(req: StartSurveyRequest) {
+        send(object { val kissa = "22" })
+    }
+
+    private fun send(obj: Any) {
+        session.remote.sendString(mapper.writeValueAsString(obj))
     }
 }
